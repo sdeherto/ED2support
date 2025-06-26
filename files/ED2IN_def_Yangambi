@@ -103,7 +103,7 @@ $ED_NL
    !---------------------------------------------------------------------------------------!
    NL%IMONTHZ = 1
    NL%IDATEZ = 1
-   NL%IYEARZ = 1903
+   NL%IYEARZ = 2210
    NL%ITIMEZ = 0
    !---------------------------------------------------------------------------------------!
 
@@ -226,11 +226,10 @@ $ED_NL
    !            soil types                                                                 !
    !---------------------------------------------------------------------------------------!
    NL%N_POI = 1
-   NL%POI_LAT = 9.25
-   NL%POI_LON = -79.75
+   NL%POI_LAT = 0.79
+   NL%POI_LON = 24.45
    NL%POI_RES = 1
    !---------------------------------------------------------------------------------------!
-
 
 
    !---------------------------------------------------------------------------------------!
@@ -374,8 +373,8 @@ $ED_NL
    ! SFILOUT -- Path and prefix for history files.                                         !
    !---------------------------------------------------------------------------------------!
 
-   NL%FFILOUT = '/kyukon/scratch/gent/vo/000/gvo00074/felicien/BCI/analy/analysis'
-   NL%SFILOUT = '/kyukon/scratch/gent/vo/000/gvo00074/felicien/BCI/histo/history'
+   NL%FFILOUT = '/data/gent/vo/000/gvo00074/vsc46573/ED_out/default/Yangambi/analysis/analysis'
+   NL%SFILOUT = '/data/gent/vo/000/gvo00074/vsc46573/ED_out/default/Yangambi/history/history'
 
    !---------------------------------------------------------------------------------------!
 
@@ -474,7 +473,6 @@ $ED_NL
    NL%IDATEH = 1
    NL%ITIMEH = 0
    !---------------------------------------------------------------------------------------!
-
 
 
    !---------------------------------------------------------------------------------------!
@@ -628,8 +626,8 @@ $ED_NL
    NL%SOIL_DATABASE = '/user/data/gent/gvo000/gvo00074/ED_common_data/soils/FAO/FAO_'
    NL%LU_DATABASE = ''
    NL%PLANTATION_FILE = ''
-   NL%THSUMS_DATABASE = '/user/data/gent/gvo000/gvo00074/ED_common_data/ed_inputs/'
-   NL%ED_MET_DRIVER_DB = '/data/gent/vo/000/gvo00074/felicien/R/climate.site/site.lat9.25N.lon79.75W/ED2/ED_MET_DRIVER_HEADER'
+   NL%THSUMS_DATABASE = '/scratch/gent/465/vsc46573/'
+   NL%ED_MET_DRIVER_DB = '/scratch/gent/465/vsc46573/test_ED2/site.lat0.79N.lon24.45E/ED2/ED_MET_DRIVER_HEADER'
    NL%SOILSTATE_DB = ''
    NL%SOILDEPTH_DB = ''
    !---------------------------------------------------------------------------------------!
@@ -1855,7 +1853,7 @@ $ED_NL
    NL%IMETTYPE = 1
    NL%ISHUFFLE = 0
    NL%METCYC1 = 1901
-   NL%METCYCF = 1902
+   NL%METCYCF = 2010
    NL%IMETAVG = 3
    NL%IMETRAD = 0
    NL%INITIAL_CO2 = 300
