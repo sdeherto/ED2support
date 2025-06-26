@@ -6,15 +6,14 @@ Log on to the cluster, for example via the web tool:
 ### Load Required Modules
 
 ```bash
-ml intel-compilers/2023.2.1 HDF5/1.14.3-iimpi-2023b UDUNITS/2.2.28-GCCcore-13.2.0
-ulimit -s unlimited
+ml intel-compilers/2023.2.1 HDF5/1.14.3-iimpi-2023b UDUNITS/2.2.28-GCCcore-13.2.0 ulimit -s unlimited
 ```
 
-Then navigate to the VO directory of Q-ForestLab (if you do not have access please request it to Steven De Hertog)
+Then navigate to the VO directory of Q-ForestLab (if you do not have access please request it to steven.dehertog@ugent.be)
 ```bash
 cd $VSC_DATA_VO
 ```
-Make a personal repository and create an initial structure
+Make a personal repository and create an initial directory structure, note that 'myname' below should be replaced by your name ;)
 ```bash
 mkdir myname
 cd myname
@@ -26,7 +25,7 @@ cd ED2.2
 git clone https://github.com/EDmodel/ED2.git
 git clone https://github.com/sdeherto/ED2support.git
 ```
-# Build ED2
+# Build and compile ED2
 ```bash
 cd ED2/ED/build/make
 cp include.mk.intel include.mk.intel_hpc
@@ -34,23 +33,22 @@ cp include.mk.intel include.mk.intel_hpc
 Edit include.mk.intel_hpc,
 Change lines 28-29 with the following:
 ```bash
-
 HDF5_INCS=-I/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.3-iimpi-2023b/include
 HDF5_LIBS=-lm -lz -L/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.3-iimpi-2023b/bin -lhdf5 -lhdf5_fortran -lhdf5_hl
 ```
 
-Then compile the model:
+Then compile the model by running the install script:
 ```bash
 cd ..
 ./install.sh -k E -p intel_hpc
 ```
-For more information on the compilation script we refer to the ED2 wiki (https://github.com/EDmodel/ED2/wiki/Quick-start and https://github.com/EDmodel/ED2/wiki/Compiler-instructions-%28aka-the-include.mk-files%29)
+This might take a while, so get a coffee or take a break, once the message 'build complete' is shown you can continue with the next steps. For more information on the compilation script we refer to the ED2 wiki (https://github.com/EDmodel/ED2/wiki/Quick-start and https://github.com/EDmodel/ED2/wiki/Compiler-instructions-%28aka-the-include.mk-files%29)
 
 ### Prepare a simple test run
 
-Next we can run teh model for a short test case. 
+Next we can run the model for a short test case. 
 First we have to get some climate drivers for the model, these have been downloaded from GitHub before and should be available under $VSC_DATA_VO/myname/ED2support/outputs/drivers
-Now all that is left to do is adapt the ED2IN file to point to these climate drivers, this file controls all model settings and can be found $PATH
+Now all that is left to do is adapt the ED2IN file to point to these climate drivers, this file controls all model settings and can be found here /data/gent/vo/000/gvo00074/myname/ED2support/files
 First navigate to its location make a local copy for adapting, then open the file with vi.
 ```bash
 cd /data/gent/vo/000/gvo00074/myname/ED2support/files
@@ -62,14 +60,14 @@ Then Adapt the following lines in the ED2IN_test file on line 630:
    NL%ED_MET_DRIVER_DB  = '/data/gent/vo/000/gvo00074/myname/outputs/drivers/ED_MET_DRIVER_HEADER'
 ```
 
-and lines 376-377
+and in lines 376-377 change the following (again pay attention to write your name!)
 
 ```bash
    NL%FFILOUT = '/data/gent/vo/000/gvo00074/myname/outputs/test_ED/analysis/analysis'
    NL%SFILOUT = '/data/gent/vo/000/gvo00074/myname/outputs/test_ED/history/history'
 ```
 
-More information on the contents of the ED2IN file are decribed on the ED2 wiki (https://github.com/EDmodel/ED2/wiki/ED2IN-namelist), note that the first change points to the provided climate drivers (CRU data from 1901 and 1902) and the two other lines point to the locations where the output files will be written. Important, you as a model user need to manually create those directories so we create them:
+More information on the contents of the ED2IN file are decribed on the ED2 wiki (https://github.com/EDmodel/ED2/wiki/ED2IN-namelist), note that the first change points to the provided climate drivers (CRU data from 1901 and 1902) and the two other changed lines point to the locations where the output files will be written. Important, you as a model user need to manually create those directories so we create them:
 ```bash
   mkdir /data/gent/vo/000/gvo00074/myname/ED2support/outputs/test_ED
   mkdir /data/gent/vo/000/gvo00074/myname/ED2support/outputs/test_ED/analysis
@@ -96,5 +94,7 @@ Or run it within an interecative job to monitor its progression (preferred optio
 qsub -I 
 ./job.pbs
 ```
+
+Note that you may need to change the properties of the file job.pbs to make it executable (simply run 'chmod u+x job.pbs' in the terminal)
 
 
