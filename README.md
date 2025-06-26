@@ -76,6 +76,11 @@ More information on the contents of the ED2IN file are decribed on the ED2 wiki 
   mkdir /data/gent/vo/000/gvo00074/myname/ED2support/outputs/test_ED/history
 ```
 
+Copy the ED2IN file over to the run directory of ED2
+```bash
+cp  /data/gent/vo/000/gvo00074/myname/ED2support/files/ED2IN_test /data/gent/vo/000/gvo00074/myname/ED2.2/ED2/ED/run/ED2IN_test
+```
+
 Finally, we can run the model, to do this navigate to the following directory
 
 ```bash
