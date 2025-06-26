@@ -8,8 +8,8 @@
 ml  intel-compilers/2023.2.1 HDF5/1.14.3-iimpi-2023b UDUNITS/2.2.28-GCCcore-13.2.0; ulimit -s unlimited
 
 ##YOU HAVE TO CHANGE THIS PATH TO YOUR LOCAL INSTALLATION!!!
-cd /user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2.2model/ED2/ED/run
+cd /data/gent/vo/000/gvo00074/myname/ED2.2/ED2/ED/run
 
 #../build/ed_2.2-opt-master-f5acf6d6 -f ED2IN
-/user/gent/465/vsc46573/ED2.2/ED2/ED/build/ed_2.2-opt-master-f5acf6d6 -f ED2IN
+/data/gent/vo/000/gvo00074/myname/ED2.2/ED2/ED/build/ed_2.2-opt-master-f5acf6d6 -f ED2IN_test
 
