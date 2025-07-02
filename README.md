@@ -94,17 +94,33 @@ Or run it within an interecative job to monitor its progression (preferred optio
 qsub -I 
 ./job.pbs
 ```
+Note that you may need to change the properties of the file job.pbs to make it executable (simply run 'chmod u+x job.pbs' in the terminal)
 
-# Step 5: Launch the postprocessing script
+# Step 5: Create easy to use outputs
 
-TO FINALISE
-first ensure that all R packages are installed and correct modules are loaded
+By default ED2 writes its output to hdf5 files, these can be explored and visualised by teh rhdf package. However to make this output exploration step a bit more convenient several postprocessing scripts have been developed.
+Here we will discuss two options, 1. based on the postprocessing script included in the ED2 installation under (R-utils) and 2. based on a home made script to convert the hdf files to netcdf timeseries files per variable (still requires some development).
 
-then ensure that scripts are updated
+We will start with the ED2 functions under the R-utils, to use these we first need to make some adaptations, first and foremost load the required R modules
+
+ml purge; ml R-bundle-Bioconductor/3.18-foss-2023a-R-4.3.2
+
+Then ensure that all R packages required to run the script are installed, you can use the install_packages.R script for thsi which can be found under ED2support/R
+
+Rscript install_packages.R
+
+The next step is to update some of the scripts in the R-utils directory, navigate to the ED2support/files/R-utils directory and follow the instructions provided in the readme this should replace all of the original files with the updated versions.
 
 finally run the script in a job (to craete example and provide in ED2support files)
 
+then run teh postprocessing script
+source("post.process.ED2.outputs.R")
+this will take sme time ad will generate two useful things
+1. a whole slate of diagnostic plots that you acn browse through, excellent for explorative analysis
+2. an Rdata file taht compiles your output in an easy to use format
 
-Note that you may need to change the properties of the file job.pbs to make it executable (simply run 'chmod u+x job.pbs' in the terminal)
+an al;ternative to thsi all is to extract variables of interest from the hdf files and convert them to nc, some script are in devlopment for that here
+
+
 
 
