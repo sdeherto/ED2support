@@ -102,6 +102,7 @@ By default ED2 writes its output to hdf5 files, these can be explored and visual
 Here we will discuss two options, 1. based on the postprocessing script included in the ED2 installation under (R-utils) and 2. based on a home made script to convert the hdf files to netcdf timeseries files per variable (still requires some development).
 
 We will start with the ED2 functions under the R-utils, to use these we first need to make some adaptations, first and foremost load the required R modules
+```bash
 ml purge; ml R-bundle-Bioconductor/3.18-foss-2023a-R-4.3.2
 ```
 Then ensure that all R packages required to run the script are installed, you can use the install_packages.R script for thsi which can be found under ED2support/R
