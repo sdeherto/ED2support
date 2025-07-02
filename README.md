@@ -20,12 +20,12 @@ cd myname
 mkdir ED2.2
 cd ED2.2
 ```
-# Clone the ED2 and ED2support repositories from GitHub
+# Step 2: Clone the ED2 and ED2support repositories from GitHub
 ```bash
 git clone https://github.com/EDmodel/ED2.git
 git clone https://github.com/sdeherto/ED2support.git
 ```
-# Build and compile ED2
+# Step 3: Build and compile ED2
 ```bash
 cd ED2/ED/build/make
 cp include.mk.intel include.mk.intel_hpc
@@ -44,7 +44,7 @@ cd ..
 ```
 This might take a while, so get a coffee or take a break, once the message 'build complete' is shown you can continue with the next steps. For more information on the compilation script we refer to the ED2 wiki (https://github.com/EDmodel/ED2/wiki/Quick-start and https://github.com/EDmodel/ED2/wiki/Compiler-instructions-%28aka-the-include.mk-files%29)
 
-### Prepare a simple test run
+# Step 4: Prepare a simple test run
 
 Next we can run the model for a short test case. 
 First we have to get some climate drivers for the model, these have been downloaded from GitHub before and should be available under $VSC_DATA_VO/myname/ED2support/outputs/drivers
@@ -94,6 +94,16 @@ Or run it within an interecative job to monitor its progression (preferred optio
 qsub -I 
 ./job.pbs
 ```
+
+# Step 5: Launch the postprocessing script
+
+TO FINALISE
+first ensure that all R packages are installed and correct modules are loaded
+
+then ensure that scripts are updated
+
+finally run the script in a job (to craete example and provide in ED2support files)
+
 
 Note that you may need to change the properties of the file job.pbs to make it executable (simply run 'chmod u+x job.pbs' in the terminal)
 
