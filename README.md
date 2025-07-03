@@ -102,24 +102,36 @@ By default ED2 writes its output to hdf5 files, these can be explored and visual
 Here we will discuss two options, 1. based on the postprocessing script included in the ED2 installation under (R-utils) and 2. based on a home made script to convert the hdf files to netcdf timeseries files per variable (still requires some development).
 
 We will start with the ED2 functions under the R-utils, to use these we first need to make some adaptations, first and foremost load the required R modules
-
+```bash
 ml purge; ml R-bundle-Bioconductor/3.18-foss-2023a-R-4.3.2
-
+```
 Then ensure that all R packages required to run the script are installed, you can use the install_packages.R script for thsi which can be found under ED2support/R
-
+```bash
 Rscript install_packages.R
+```
+The next step is to update some of the scripts in the R-utils directory, navigate to the ED2support/files/R-utils directory and copy these files over to the R-utils directory in your ED2 installation, these should replace some of the original files with the updated versions.
 
-The next step is to update some of the scripts in the R-utils directory, navigate to the ED2support/files/R-utils directory and follow the instructions provided in the readme this should replace all of the original files with the updated versions.
-
-finally run the script in a job (to craete example and provide in ED2support files)
-
-then run teh postprocessing script
-source("post.process.ED2.outputs.R")
-this will take sme time ad will generate two useful things
-1. a whole slate of diagnostic plots that you acn browse through, excellent for explorative analysis
+then run the postprocessing script, first open the file and make sure that teh paths in the script point to your local directories
+```bash
+Rscript post.process.ED2.outputs.R
+```
+this will take some time ad will generate two useful things, both will be added in your ED2 output directory
+1. a whole slate of diagnostic plots that you can browse through, excellent for explorative analysis
 2. an Rdata file taht compiles your output in an easy to use format
 
-an al;ternative to thsi all is to extract variables of interest from the hdf files and convert them to nc, some script are in devlopment for that here
+an alternative to this all is to extract variables of interest from the hdf files and convert them to netcdf format, some script are in development for that and can be accessed here
+TO COMPLETE
+
+# create new meteo input
+
+
+# special cases: implement land use
+
+# special cases: use ED-hydro
+
+# how to set up multiple simulations manipulate ED2IN in scripted way
+
+# upscale this to multiple sites at once
 
 
 
