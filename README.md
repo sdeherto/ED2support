@@ -136,7 +136,7 @@ H2O_PLANT_LIM<-3
 PLANT_HYDRO_SCHEME<-1
 ```
 # how to set up multiple simulations manipulate ED2IN in scripted way
-TODO
+Some scripts to do this are provided under files/submit_batch there is a readme available with some brief description on how to use these scripts. They are heavily based on the original scripts by Félicien Meunier provided here https://github.com/femeunier/ED2scenarios
 
 
 
