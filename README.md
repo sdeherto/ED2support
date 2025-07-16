@@ -48,7 +48,7 @@ This might take a while, so get a coffee or take a break, once the message 'buil
 
 Next we can run the model for a short test case. 
 First we have to get some climate drivers for the model, these have been downloaded from GitHub before and should be available under $VSC_DATA_VO/myname/ED2support/outputs/drivers
-Now all that is left to do is adapt the ED2IN file to point to these climate drivers, this file controls all model settings and can be found here /data/gent/vo/000/gvo00074/myname/ED2support/files
+Now all that is left to do is adapt the ED2IN file to point to these climate drivers, this file controls all model settings, there is annotations in the file but additional info on parameter meanings can be found here (https://github.com/EDmodel/ED2/wiki/ED2IN-namelist). The ED2IN file we will use can be found here /data/gent/vo/000/gvo00074/myname/ED2support/files
 First navigate to its location make a local copy for adapting, then open the file with vi.
 ```bash
 cd /data/gent/vo/000/gvo00074/myname/ED2support/files
@@ -122,7 +122,7 @@ this will take some time and will generate two useful things, both will be added
 Additionally some files within the R subdirectory (convert_Rdata_to_nc.sh and R scripts called therein) provide some code to convert from an RData file to timeseries files per variables in netcdf format (mimicking TRENDY output).
 
 # create new meteo input
-There exist multiple scripts for different types of atmospheric forcings, we will illustrate two here:
+For general info on the contents of ED2 met drivers please consult the wiki (https://github.com/EDmodel/ED2/wiki/Drivers). Here we provide some script for generating these at the UGent cluster. There exist multiple scripts for different types of atmospheric forcings, we will illustrate two here:
 - Scripts to convert CRU data based on Pecan (download.and.convert.input.ED2.R available in R subdirectory)
 - Scripts to convert any generic climate data given that it is provided in a simple csv format (available in subfolder R/climate, check the README there for more info)
 
