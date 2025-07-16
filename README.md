@@ -135,8 +135,8 @@ Simply change the following in your ED2IN
 H2O_PLANT_LIM<-3
 PLANT_HYDRO_SCHEME<-1
 ```
-# how to set up multiple simulations manipulate ED2IN in scripted way
-Some scripts to do this are provided under files/submit_batch there is a readme available with some brief description on how to use these scripts. They are heavily based on the original scripts by Félicien Meunier provided here https://github.com/femeunier/ED2scenarios
+# how to set up multiple simulations and manipulate ED2IN in scripted way
+Some example scripts to do this are provided under files/submit_batch there is a readme available with some brief description on how to use these scripts. They are heavily based on the original scripts developed by Félicien Meunier which are provided here https://github.com/femeunier/ED2scenarios
 
 
 
