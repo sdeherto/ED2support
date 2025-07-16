@@ -115,23 +115,29 @@ then run the postprocessing script, first open the file and make sure that teh p
 ```bash
 Rscript post.process.ED2.outputs.R
 ```
-this will take some time ad will generate two useful things, both will be added in your ED2 output directory
+this will take some time and will generate two useful things, both will be added in your ED2 output directory
 1. a whole slate of diagnostic plots that you can browse through, excellent for explorative analysis
-2. an Rdata file taht compiles your output in an easy to use format
+2. an Rdata file that compiles your output in an easy to use format
 
-an alternative to this all is to extract variables of interest from the hdf files and convert them to netcdf format, some script are in development for that and can be accessed here
-TO COMPLETE
+Additionally some files within the R subdirectory (convert_Rdata_to_nc.sh and R scripts called therein) provide some code to convert from an RData file to timeseries files per variables in netcdf format (mimicking TRENDY output).
 
 # create new meteo input
-
+There exist multiple scripts for different types of atmospheric forcings, we will illustrate two here:
+- Scripts to convert CRU data based on Pecan (download.and.convert.input.ED2 available in R subdirectory)
+- Scripts to convert any generic climate data given that it is provided in a simple csv format (available in subfolde R/climate, check the README there for more info)
 
 # special cases: implement land use
+Some example scripts are available on the VO (/data/gent/vo/000/gvo00074/land_use/regrowth) in general we recommend that you check the ED2 wiki for any information regarding this (https://github.com/EDmodel/ED2/wiki/Initial-conditions). You are just required to generate a .lu file and point to this file in the ED2IN file.
 
 # special cases: use ED-hydro
-
+Simply change the following in your ED2IN
+```bash
+H2O_PLANT_LIM<-3
+PLANT_HYDRO_SCHEME<-1
+```
 # how to set up multiple simulations manipulate ED2IN in scripted way
+TODO
 
-# upscale this to multiple sites at once
 
 
 

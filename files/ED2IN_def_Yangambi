@@ -103,7 +103,7 @@ $ED_NL
    !---------------------------------------------------------------------------------------!
    NL%IMONTHZ = 1
    NL%IDATEZ = 1
-   NL%IYEARZ = 2210
+   NL%IYEARZ = 1902
    NL%ITIMEZ = 0
    !---------------------------------------------------------------------------------------!
 
@@ -1853,7 +1853,7 @@ $ED_NL
    NL%IMETTYPE = 1
    NL%ISHUFFLE = 0
    NL%METCYC1 = 1901
-   NL%METCYCF = 2010
+   NL%METCYCF = 1902
    NL%IMETAVG = 3
    NL%IMETRAD = 0
    NL%INITIAL_CO2 = 300
