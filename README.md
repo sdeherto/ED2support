@@ -98,7 +98,7 @@ Note that you may need to change the properties of the file job.pbs to make it e
 
 # Step 5: Create easy to use outputs
 
-By default ED2 writes its output to hdf5 files, these can be explored and visualised by teh rhdf package. However to make this output exploration step a bit more convenient several postprocessing scripts have been developed.
+By default ED2 writes its output to hdf5 files, these can be explored and visualised by the rhdf package. However to make this output exploration step a bit more convenient several postprocessing scripts have been developed.
 Here we will discuss two options, 1. based on the postprocessing script included in the ED2 installation under (R-utils) and 2. based on a home made script to convert the hdf files to netcdf timeseries files per variable (still requires some development).
 
 We will start with the ED2 functions under the R-utils, to use these we first need to make some adaptations, first and foremost load the required R modules
@@ -111,7 +111,7 @@ Rscript install_packages.R
 ```
 The next step is to update some of the scripts in the R-utils directory, navigate to the ED2support/files/R-utils directory and copy these files over to the R-utils directory in your ED2 installation, these should replace some of the original files with the updated versions.
 
-then run the postprocessing script, first open the file and make sure that teh paths in the script point to your local directories
+then run the postprocessing script, first open the file and make sure that the paths in the script point to your local directories
 ```bash
 Rscript post.process.ED2.outputs.R
 ```
@@ -123,8 +123,8 @@ Additionally some files within the R subdirectory (convert_Rdata_to_nc.sh and R 
 
 # create new meteo input
 There exist multiple scripts for different types of atmospheric forcings, we will illustrate two here:
-- Scripts to convert CRU data based on Pecan (download.and.convert.input.ED2 available in R subdirectory)
-- Scripts to convert any generic climate data given that it is provided in a simple csv format (available in subfolde R/climate, check the README there for more info)
+- Scripts to convert CRU data based on Pecan (download.and.convert.input.ED2.R available in R subdirectory)
+- Scripts to convert any generic climate data given that it is provided in a simple csv format (available in subfolder R/climate, check the README there for more info)
 
 # special cases: implement land use
 Some example scripts are available on the VO (/data/gent/vo/000/gvo00074/land_use/regrowth) in general we recommend that you check the ED2 wiki for any information regarding this (https://github.com/EDmodel/ED2/wiki/Initial-conditions). You are just required to generate a .lu file and point to this file in the ED2IN file.
