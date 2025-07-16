@@ -1,0 +1,25 @@
+#!/bin/bash -l
+#PBS -l nodes=1:ppn=10
+#PBS -l mem=16gb
+#PBS -l walltime=24:00:00
+
+# Load modules
+ml purge
+ml R-bundle-Bioconductor/3.18-foss-2023a-R-4.3.2
+cd /user/gent/465/vsc46573/ED2support/R
+# Get inputs from command-line arguments
+START_YEAR=${START_YEAR:-1846}
+END_YEAR=${END_YEAR:-1899}
+SITENAME=${SITENAME:-"ZAM_Chintumukulu"}
+FLAG=${FLAG:-1}
+
+# Echo for logging
+echo "Running ED2 conversion for $SITENAME ($START_YEAR-$END_YEAR), Flag: $FLAG"
+# Optional: redirect stdout and stderr to named log files (overriding PBS -o / -e)
+
+exec > ${SITENAME}_clim.o$PBS_JOBID 2> ${SITENAME}_clim.e$PBS_JOBID
+
+# Run the R script with those arguments
+Rscript convert.RDS.input.ED2.flex.trans.R $START_YEAR $END_YEAR $SITENAME $FLAG
+
+
