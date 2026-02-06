@@ -6,7 +6,7 @@ Log on to the cluster, for example via the web tool:
 ### Load Required Modules
 
 ```bash
-ml intel-compilers/2023.2.1 HDF5/1.14.3-iimpi-2023b UDUNITS/2.2.28-GCCcore-13.2.0 ulimit -s unlimited
+ml  intel-compilers/2023.2.1 HDF5/1.14.3-iimpi-2023b UDUNITS/2.2.28-GCCcore-13.2.0; ulimit -s unlimited
 ```
 
 Then navigate to the VO directory of Q-ForestLab (if you do not have access please request it to steven.dehertog@ugent.be)
