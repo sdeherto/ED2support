@@ -6,7 +6,7 @@ Log on to the cluster, for example via the web tool:
 ### Load Required Modules
 
 ```bash
-ml  intel-compilers/2023.2.1 HDF5/1.14.3-iimpi-2023b UDUNITS/2.2.28-GCCcore-13.2.0; ulimit -s unlimited
+ml purge ; ml HDF5/1.14.3-iimpi-2023b ; ml imkl-FFTW/2023.2.0-iimpi-2023b
 ```
 
 Then navigate to the VO directory of Q-ForestLab (if you do not have access please request it to steven.dehertog@ugent.be)
@@ -31,8 +31,9 @@ cd ED2/ED/build/make
 cp include.mk.intel include.mk.intel_hpc
 ```
 Edit include.mk.intel_hpc,
-Change lines 28-29 with the following:
+Change lines 27-29 with the following:
 ```bash
+HDF5_PATH=/apps/gent/RHEL9/zen2-ib/software/HDF5/1.14.3-iimpi-2023b/
 HDF5_INCS=-I/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.3-iimpi-2023b/include
 HDF5_LIBS=-lm -lz -L/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.3-iimpi-2023b/bin -lhdf5 -lhdf5_fortran -lhdf5_hl
 ```
