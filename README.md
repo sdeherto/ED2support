@@ -6,7 +6,7 @@ Log on to the cluster, for example via the web tool:
 ### Load Required Modules
 
 ```bash
-ml purge ; ml HDF5/1.14.3-iimpi-2023b ; ml imkl-FFTW/2023.2.0-iimpi-2023b
+ml purge ; ml HDF5/1.14.0-intel-compilers-2023.1.0-serial ; ml imkl-FFTW/2023.1.0-iompi-2023a
 ```
 
 Then navigate to the VO directory of Q-ForestLab (if you do not have access please request it to steven.dehertog@ugent.be)
@@ -33,9 +33,9 @@ cp include.mk.intel include.mk.intel_hpc
 Edit include.mk.intel_hpc,
 Change lines 27-29 with the following:
 ```bash
-HDF5_PATH=/apps/gent/RHEL9/zen2-ib/software/HDF5/1.14.3-iimpi-2023b/
-HDF5_INCS=-I/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.3-iimpi-2023b/include
-HDF5_LIBS=-lm -lz -L/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.3-iimpi-2023b/bin -lhdf5 -lhdf5_fortran -lhdf5_hl
+HDF5_PATH=/apps/gent/RHEL9/zen2-ib/software/HDF5/1.14.0-intel-compilers-2023.1.0-serial
+HDF5_INCS=-I/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.0-intel-compilers-2023.1.0-serial/include
+HDF5_LIBS=-lm -lz -L/apps/gent/RHEL9/skylake-ib/software/HDF5/1.14.0-intel-compilers-2023.1.0-serial/bin -lhdf5 -lhdf5_fortran -lhdf5_hl
 ```
 
 Then compile the model by running the install script:
